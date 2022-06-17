@@ -1,0 +1,40 @@
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [necesitar, hotel]
+Tipo de pregunta actual realizada por el bot: TIPOSERVICIO
+Tipos de preguntas que ya fueron realizadas: []
+
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [necesitar, hotel] ^ TipoPreguntaActual[TIPOSERVICIO] -> 'Ok, puedo ayudarte con tu busqueda de hoteles!' ^ TipoPreguntaRespondida[TIPOSERVICIO] ^ RespuestaUsuario[HOTEL] 
+2- [necesitar, hotel] ^ TipoPreguntaActual[TIPOSERVICIO] -> 'Perfecto! Puedo ofrecerte hoteles' ^ TipoPreguntaRespondida[TIPOSERVICIO] ^ RespuestaUsuario[HOTEL] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 9 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Ok, puedo ayudarte con tu busqueda de hoteles!
+Se infiere: TipoPreguntaRespondida[TIPOSERVICIO] ^ RespuestaUsuario[HOTEL] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [necesitar, hotel]
+Tipo de pregunta actual realizada por el bot: TIPOSERVICIO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO]
+Respuesta/eleccion del usuario: [HOTEL] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, HOTEL, ] ^ FiltrosUsados[HOTEL] -> ¿Deseas viajar al interior o exterior del pais? ^ TipoPreguntaActual[DESTINO]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, HOTEL, ] ^ FiltrosUsados[HOTEL] -> ¿Deseas realizar un viaje nacional o internacional? ^ TipoPreguntaActual[DESTINO]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 18 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Deseas realizar un viaje nacional o internacional?
+Se infiere: TipoPreguntaActual[DESTINO]
+ 
+ 
+ 
