@@ -115,20 +115,20 @@ public class PaqueteTuristico {
 	
 	public String toString(boolean mostrarDoc) {
 		String aux = 
-				this.descripcion + ". Precio: $" + this.precio + 
-				". Fecha inicio: " + this.fechaIda + 
+				this.descripcion + ". \n Precio: $" + this.precio + 
+				". \n Fecha inicio: " + this.fechaIda + 
 				" - Fecha fin: " + this.fechaVuelta + ". ";
 		
 		if (this.incluyeExcursion) {
-			aux += "El paquete incluye excursiones. ";
+			aux += "El paquete incluye excursiones. \n";
 		}
 		
 		if (this.incluyeAsistenciaViajero) {
-			aux += "El paquete incluye asistencia al viajero. ";
+			aux += "El paquete incluye asistencia al viajero. \n";
 		}
 		
 		if (this.incluyeTraslados) {
-			aux += "El paquete incluye los traslados. ";
+			aux += "El paquete incluye los traslados. \n";
 		}
 		
 		if (mostrarDoc) {

@@ -145,7 +145,7 @@ public class BaseDeDatosDeReglas {
 			4,
 			TipoFiltroPregunta.PREFERENCIALUGAR,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PASAJE, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.TRANSPORTE)),
-			"¿Alguna preferencia en especial? ¿Grandes ciudades o lugares mas tranquilos?"
+			"¿Alguna preferencia en especial? \n ¿Te interesa una ciudad grande o un lugar tranquilo?"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -257,7 +257,7 @@ public class BaseDeDatosDeReglas {
 			4,
 			TipoFiltroPregunta.PREFERENCIAMASCOTAS,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.HOTEL, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.PRESUPUESTO)),
-			"¿Alguna preferencia en especial con las mascotas? ¿Que acepte o no acepte mascotas?"
+			"¿Alguna preferencia en especial con las mascotas? \n ¿Que acepte o no acepte mascotas?"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -321,7 +321,7 @@ public class BaseDeDatosDeReglas {
 			4,
 			TipoFiltroPregunta.EXCURSION,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PAQUETETURISTICO, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.PRESUPUESTO)),
-			"¿Alguna preferencia en especial con respecto a las excursiones? ¿Con excursiones o sin excursiones?"
+			"¿Alguna preferencia en especial con respecto a las excursiones? \n ¿Con excursiones o sin excursiones?"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -329,7 +329,7 @@ public class BaseDeDatosDeReglas {
 			4,
 			TipoFiltroPregunta.EXCURSION,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PAQUETETURISTICO, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.PRESUPUESTO)),
-			"¿Te gustaria un paquete que cuente con excursiones o prefieres sin excursiones?"
+			"¿Te gustaria un paquete que cuente con excursiones \n o prefieres sin excursiones?"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -337,7 +337,7 @@ public class BaseDeDatosDeReglas {
 			4,
 			TipoFiltroPregunta.ASISTENCIAVIAJERO,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PAQUETETURISTICO, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.PRESUPUESTO)),
-			"¿Te interesa que el paquete cuente con asistencia al viajero o sin asistencia al viajero?"
+			"¿Te interesa que el paquete cuente con asistencia al viajero \n o sin asistencia al viajero?"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -345,7 +345,7 @@ public class BaseDeDatosDeReglas {
 			4,
 			TipoFiltroPregunta.ASISTENCIAVIAJERO,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PAQUETETURISTICO, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.PRESUPUESTO)),
-			"¿Te gustaria un paquete que cuente con asistencia al viajero o prefieres sin asistencia al viajero?"
+			"¿Te gustaria un paquete que cuente con asistencia al viajero \n o prefieres sin asistencia al viajero?"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -369,7 +369,7 @@ public class BaseDeDatosDeReglas {
 			2,
 			TipoFiltroPregunta.CONTINENTE,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PASAJE, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.INTERNACIONAL)),
-			"¿A que continente deseas viajar?"
+			"¿A que continente deseas viajar? \n AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -\n EUROPA - AFRICA - OCEANIA - ASIA"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -377,7 +377,7 @@ public class BaseDeDatosDeReglas {
 			2,
 			TipoFiltroPregunta.CONTINENTE,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PASAJE, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.INTERNACIONAL)),
-			"¿Que continente deseas visitar?"
+			"¿Que continente deseas visitar?  \n AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -\n EUROPA - AFRICA - OCEANIA - ASIA"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -385,7 +385,7 @@ public class BaseDeDatosDeReglas {
 			2,
 			TipoFiltroPregunta.CONTINENTE,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.HOTEL, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.INTERNACIONAL)),
-			"¿A que continente deseas viajar?"
+			"¿A que continente deseas viajar?  \n AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -\n EUROPA - AFRICA - OCEANIA - ASIA"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -393,7 +393,7 @@ public class BaseDeDatosDeReglas {
 			2,
 			TipoFiltroPregunta.CONTINENTE,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.HOTEL, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.INTERNACIONAL)),
-			"¿Que continente deseas visitar?"
+			"¿Que continente deseas visitar?  \n AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -\n EUROPA - AFRICA - OCEANIA - ASIA"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -401,7 +401,7 @@ public class BaseDeDatosDeReglas {
 			2,
 			TipoFiltroPregunta.CONTINENTE,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PAQUETETURISTICO, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.INTERNACIONAL)),
-			"¿A que continente deseas viajar?"
+			"¿A que continente deseas viajar?  \n AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -\n EUROPA - AFRICA - OCEANIA - ASIA"
 		));
 			
 		reglasPreg.add(new ReglaPregunta(
@@ -409,7 +409,7 @@ public class BaseDeDatosDeReglas {
 			2,
 			TipoFiltroPregunta.CONTINENTE,
 			new ArrayList<TipoFiltroPregunta>(Arrays.asList(TipoFiltroPregunta.TIPOSERVICIO, TipoFiltroPregunta.PAQUETETURISTICO, TipoFiltroPregunta.DESTINO, TipoFiltroPregunta.INTERNACIONAL)),
-			"¿Que continente deseas visitar?"
+			"¿Que continente deseas visitar?  \n AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -\n EUROPA - AFRICA - OCEANIA - ASIA"
 		));
 		
 		reglasPreg.add(new ReglaPregunta(
@@ -611,7 +611,7 @@ public class BaseDeDatosDeReglas {
 			17,
 			1,
 			TipoFiltroPregunta.TIPOSERVICIO,
-			new ArrayList<String>(Arrays.asList("querer", "paquete", "turismo")),
+			new ArrayList<String>(Arrays.asList("querer", "paquete", "turistico")),
 			TipoRespuestaUsuario.PAQUETETURISTICO,
 			"Ok, puedo ayudarte con tu busqueda de paquetes de turismo!"
 		));
@@ -620,7 +620,7 @@ public class BaseDeDatosDeReglas {
 			18,
 			2,
 			TipoFiltroPregunta.TIPOSERVICIO,
-			new ArrayList<String>(Arrays.asList("querer", "paquete", "turismo")),
+			new ArrayList<String>(Arrays.asList("querer", "paquete", "turistico")),
 			TipoRespuestaUsuario.PAQUETETURISTICO,
 			"Perfecto! Puedo ofrecerte paquetes de turismo"
 		));
@@ -629,7 +629,7 @@ public class BaseDeDatosDeReglas {
 			19,
 			1,
 			TipoFiltroPregunta.TIPOSERVICIO,
-			new ArrayList<String>(Arrays.asList("buscar", "paquete", "turismo")),
+			new ArrayList<String>(Arrays.asList("buscar", "paquete", "turistico")),
 			TipoRespuestaUsuario.PAQUETETURISTICO,
 			"Ok, puedo ayudarte con tu busqueda de paquetes de turismo!"
 		));
@@ -638,7 +638,7 @@ public class BaseDeDatosDeReglas {
 			20,
 			2,
 			TipoFiltroPregunta.TIPOSERVICIO,
-			new ArrayList<String>(Arrays.asList("buscar", "paquete", "turismo")),
+			new ArrayList<String>(Arrays.asList("buscar", "paquete", "turistico")),
 			TipoRespuestaUsuario.PAQUETETURISTICO,
 			"Perfecto! Puedo ofrecerte paquetes de turismo!"
 		));
@@ -647,7 +647,7 @@ public class BaseDeDatosDeReglas {
 			21,
 			1,
 			TipoFiltroPregunta.TIPOSERVICIO,
-			new ArrayList<String>(Arrays.asList("preguntar", "paquete", "turismo")),
+			new ArrayList<String>(Arrays.asList("preguntar", "paquete", "turistico")),
 			TipoRespuestaUsuario.PAQUETETURISTICO,
 			"Ok, puedo ayudarte con tu busqueda de paquetes de turismo!"
 		));
@@ -656,7 +656,7 @@ public class BaseDeDatosDeReglas {
 			22,
 			2,
 			TipoFiltroPregunta.TIPOSERVICIO,
-			new ArrayList<String>(Arrays.asList("preguntar", "paquete", "turismo")),
+			new ArrayList<String>(Arrays.asList("preguntar", "paquete", "turistico")),
 			TipoRespuestaUsuario.PAQUETETURISTICO,
 			"Perfecto! Puedo ofrecerte paquetes de turismo"
 		));
@@ -737,7 +737,7 @@ public class BaseDeDatosDeReglas {
 			31,
 			1,
 			TipoFiltroPregunta.TRANSPORTE,
-			new ArrayList<String>(Arrays.asList("terrestre")),
+			new ArrayList<String>(Arrays.asList("via", "terrestre")),
 			TipoRespuestaUsuario.COLECTIVO,
 			"Perfecto!"
 		));
@@ -746,7 +746,7 @@ public class BaseDeDatosDeReglas {
 			32,
 			2,
 			TipoFiltroPregunta.TRANSPORTE,
-			new ArrayList<String>(Arrays.asList("terrestre")),
+			new ArrayList<String>(Arrays.asList("via", "terrestre")),
 			TipoRespuestaUsuario.COLECTIVO,
 			"Buenisimo!"
 		));
@@ -773,7 +773,7 @@ public class BaseDeDatosDeReglas {
 			35,
 			1,
 			TipoFiltroPregunta.TRANSPORTE,
-			new ArrayList<String>(Arrays.asList("aerea")),
+			new ArrayList<String>(Arrays.asList("via", "aerea")),
 			TipoRespuestaUsuario.AVION,
 			"Perfecto!"
 		));
@@ -782,7 +782,7 @@ public class BaseDeDatosDeReglas {
 			36,
 			2,
 			TipoFiltroPregunta.TRANSPORTE,
-			new ArrayList<String>(Arrays.asList("aerea")),
+			new ArrayList<String>(Arrays.asList("via", "aerea")),
 			TipoRespuestaUsuario.AVION,
 			"Buenisimo!"
 		));
@@ -971,7 +971,7 @@ public class BaseDeDatosDeReglas {
 			57,
 			1,
 			TipoFiltroPregunta.CANTPERSONAS,
-			new ArrayList<String>(Arrays.asList("varias", "persona")),
+			new ArrayList<String>(Arrays.asList("varia", "persona")),
 			TipoRespuestaUsuario.VARIASPERSONAS,
 			"Perfecto. Tengo algunos para recomendarles"
 		));
@@ -980,7 +980,7 @@ public class BaseDeDatosDeReglas {
 			58,
 			2,
 			TipoFiltroPregunta.CANTPERSONAS,
-			new ArrayList<String>(Arrays.asList("varias", "persona")),
+			new ArrayList<String>(Arrays.asList("varia", "persona")),
 			TipoRespuestaUsuario.VARIASPERSONAS,
 			"Excelente eleccion. Tengo algunos para recomendarles"
 		));
@@ -1189,7 +1189,7 @@ public class BaseDeDatosDeReglas {
 			TipoFiltroPregunta.PREFERENCIAMASCOTAS,
 			new ArrayList<String>(Arrays.asList("no", "aceptar", "mascota")),
 			TipoRespuestaUsuario.NOACEPTARMASCOTAS,
-			"Perfecto! Tengo unos hoteles que no aceptan mascotas que podrian interesarte"
+			"Perfecto! Tengo unos hoteles que no aceptan mascotas \n que podrian interesarte"
 		));
 						
 		reglasRes.add(new ReglaRespuesta(
@@ -1207,7 +1207,7 @@ public class BaseDeDatosDeReglas {
 			TipoFiltroPregunta.EXCURSION,
 			new ArrayList<String>(Arrays.asList("con", "excursion")),
 			TipoRespuestaUsuario.CONEXCURSION,
-			"Ok, tengo algunos paquetes con excursiones incluidas que podrian interesarte"
+			"Ok, tengo algunos paquetes con excursiones incluidas \n que podrian interesarte"
 		));
 							
 		reglasRes.add(new ReglaRespuesta(
@@ -1225,7 +1225,7 @@ public class BaseDeDatosDeReglas {
 			TipoFiltroPregunta.EXCURSION,
 			new ArrayList<String>(Arrays.asList("sin", "excursion")),
 			TipoRespuestaUsuario.SINEXCURSION,
-			"Ok, tengo algunos paquetes sin excursiones incluidas que podrian interesarte"
+			"Ok, tengo algunos paquetes sin excursiones incluidas \n que podrian interesarte"
 		));
 								
 		reglasRes.add(new ReglaRespuesta(
@@ -1505,6 +1505,96 @@ public class BaseDeDatosDeReglas {
 			new ArrayList<String>(Arrays.asList("no", "necesitar", "ayuda")),
 			TipoRespuestaUsuario.NONECESITARAYUDA,
 			"Comprendo"
+		));
+		
+		reglasRes.add(new ReglaRespuesta(
+			117,
+			1,
+			TipoFiltroPregunta.TRANSPORTE,
+			new ArrayList<String>(Arrays.asList("aerea")),
+			TipoRespuestaUsuario.AVION,
+			"Perfecto!"
+		));
+				
+		reglasRes.add(new ReglaRespuesta(
+			118,
+			2,
+			TipoFiltroPregunta.TRANSPORTE,
+			new ArrayList<String>(Arrays.asList("aerea")),
+			TipoRespuestaUsuario.AVION,
+			"Buenisimo!"
+		));
+		
+		reglasRes.add(new ReglaRespuesta(
+			119,
+			1,
+			TipoFiltroPregunta.TRANSPORTE,
+			new ArrayList<String>(Arrays.asList("terrestre")),
+			TipoRespuestaUsuario.COLECTIVO,
+			"Perfecto!"
+		));
+			
+		reglasRes.add(new ReglaRespuesta(
+			120,
+			2,
+			TipoFiltroPregunta.TRANSPORTE,
+			new ArrayList<String>(Arrays.asList("terrestre")),
+			TipoRespuestaUsuario.COLECTIVO,
+			"Buenisimo!"
+		));
+		
+		reglasRes.add(new ReglaRespuesta(
+			121,
+			1,
+			TipoFiltroPregunta.PRESUPUESTO,
+			new ArrayList<String>(Arrays.asList("barato")),
+			TipoRespuestaUsuario.GASTARPOCO,
+			"Ok, tengo algunos economicos que podrian interesarte"
+		));
+		
+		reglasRes.add(new ReglaRespuesta(
+			122,
+			1,
+			TipoFiltroPregunta.PRESUPUESTO,
+			new ArrayList<String>(Arrays.asList("caro")),
+			TipoRespuestaUsuario.GASTARMUCHO,
+			"Ok, tengo algunos costosos que podrian interesarte"
+		));
+		
+		reglasRes.add(new ReglaRespuesta(
+			123,
+			2,
+			TipoFiltroPregunta.AYUDADOCS,
+			new ArrayList<String>(Arrays.asList("si")),
+			TipoRespuestaUsuario.NECESITARAYUDA,
+			"Dale! Puedo ayudarte con eso"
+		));
+			
+		reglasRes.add(new ReglaRespuesta(
+			124,
+			1,
+			TipoFiltroPregunta.AYUDADOCS,
+			new ArrayList<String>(Arrays.asList("no")),
+			TipoRespuestaUsuario.NONECESITARAYUDA,
+			"Entiendo"
+		));
+		
+		reglasRes.add(new ReglaRespuesta(
+			125,
+			2,
+			TipoFiltroPregunta.PREFERENCIAMASCOTAS,
+			new ArrayList<String>(Arrays.asList("si")),
+			TipoRespuestaUsuario.ACEPTARMASCOTAS,
+			"Excelente eleccion! Puedo recomendarte algunos hoteles pet friendly"
+		));
+				
+		reglasRes.add(new ReglaRespuesta(
+			126,
+			1,
+			TipoFiltroPregunta.PREFERENCIAMASCOTAS,
+			new ArrayList<String>(Arrays.asList("no")),
+			TipoRespuestaUsuario.NOACEPTARMASCOTAS,
+			"Perfecto! Tengo unos hoteles que no aceptan mascotas \n que podrian interesarte"
 		));
 	}
 	
