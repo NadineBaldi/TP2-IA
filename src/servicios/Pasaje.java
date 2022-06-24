@@ -122,9 +122,9 @@ public class Pasaje {
 	
 	public String toString(boolean mostrarDoc) {
 		String aux = 
-			"Origen:" + this.origen + " - Destino: " + this.destino + 
-			". Medio de transporte: " + this.tipoTransporte +
-			". Precio: $" + this.precio + ". Fecha ida: " + this.fechaIda + 
+			"Origen: " + this.origen + " - Destino: " + this.destino + 
+			". \n Medio de transporte: " + this.tipoTransporte +
+			". \n Precio: $" + this.precio + ". \n Fecha ida: " + this.fechaIda + 
 			" - Fecha vuelta: " + this.fechaVuelta + ". ";
 		
 		if (mostrarDoc) {

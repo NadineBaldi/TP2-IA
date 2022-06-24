@@ -58,6 +58,23 @@ public class FiltradoServicios {
 		this.mostrarDocumentacion = false;
 	}
 	
+	//devuelve true si se pueden seguir filtrando los arreglos de recomendacion
+	//si el arreglo tiene un solo elemento no se deberia seguir filtrando
+	public boolean verificarRecomendaciones() {
+		if (tipoRes == TipoRespuestaUsuario.PASAJE) {
+			if(pasajesFiltrados.size() <= 1) return false;
+			else return true;
+		} else if (tipoRes == TipoRespuestaUsuario.HOTEL) {
+			if(hotelesFiltrados.size() <= 1) return false;
+			else return true;
+		} else if (tipoRes == TipoRespuestaUsuario.PAQUETETURISTICO) {
+			if(paquetesFiltrados.size() <= 1) return false;
+			else return true;
+		}
+		
+		return true;
+	}
+	
 	// Defino un metodo que crea el string que se va a imprimir por pantalla con todas las recomendaciones que el chatbot le dara al usuario
 	public String recomendacion() {
 		String recomendacion = "";

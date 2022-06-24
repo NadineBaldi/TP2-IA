@@ -14,7 +14,6 @@ public class Main {
 		interfazChatbot interfaz = new interfazChatbot(sistemaDeProduccion);
 		interfaz.setLocationRelativeTo(null);
 		interfaz.setVisible(true);
-		//sistemaDeProduccion.nuevoCicloDeRespuesta(null);
 	}
 
 }

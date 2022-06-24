@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 import criteriosSistemaProduccion.Estrategia;
+import nlp.NLP;
 import reglas.Regla;
 import reglas.ReglaPregunta;
 import reglas.ReglaRespuesta;
@@ -21,6 +22,7 @@ public class FiltradoReglas {
 	private TipoFiltroPregunta tipoPreg; //es la pregunta actual (la ultima que el bot pregunto)
 	private ArrayList<TipoFiltroPregunta> preguntadas; //guardamos en una lista los tipos de preguntas que ya fueron hechos
 	private FiltradoServicios filtradoServicios;
+	private NLP nlp;
 	
 	public FiltradoReglas() {
 		
@@ -32,7 +34,7 @@ public class FiltradoReglas {
 		BaseDeDatosDeReglas BDR = BaseDeDatosDeReglas.getInstance(); //obtengo una instancia de la base de datos
 		this.reglasPreguntas.addAll(BDR.getReglasPreg());
 		this.reglasRespuestas.addAll(BDR.getReglasRes());
-		
+		this.nlp = new NLP();
 		this.filtradoServicios = new FiltradoServicios();
 		
 	}
@@ -106,8 +108,9 @@ public class FiltradoReglas {
 		String respuesta = "";
 		Estrategia est = new Estrategia();
 		EscribirTxt escTxt = new EscribirTxt(); //se escribe el archivo txt para mostrar las reglas y todo lo que se va implementando
-		ArrayList<String> palabras = new ArrayList<String>(Arrays.asList("necesitar", "hotel"));
-		
+		//ArrayList<String> palabras = new ArrayList<String>(Arrays.asList("necesitar", "hotel"));
+		ArrayList<String> palabras = nlp.aplicarNLP(res);
+				
 		//chequeo con que reglas matchean las palabras ingresadas
 		ArrayList<Regla> reglasRespuestasMatcheadas = this.verificarReglasRespuestas(palabras);
 		
@@ -150,7 +153,7 @@ public class FiltradoReglas {
 			ArrayList<Regla> reglasPreguntasMatcheadas = this.verificarReglasPreguntas();
 			this.setearNovedad(reglasRespuestasMatcheadas, reglasPreguntasMatcheadas);
 			
-			if (!reglasPreguntasMatcheadas.isEmpty()) { //si todavia quedan preguntas que matcheen
+			if (!reglasPreguntasMatcheadas.isEmpty() /*&& filtradoServicios.verificarRecomendaciones()*/) { //si todavia quedan preguntas que matcheen
 				escTxt.escribirBusquedaPreguntas(palabras, reglasPreguntasMatcheadas, this.tipoPreg, this.preguntadas, this.reglasRespuestasUsadas);
 			
 				//ahora se elige una regla segun las distintas estrategias
@@ -166,21 +169,16 @@ public class FiltradoReglas {
 				//si no hay mas preguntas que matcheen, recomiendo una opcion
 				String recomendacion = filtradoServicios.recomendacion();
 				if (recomendacion.isEmpty()) {
-					respuesta += "No puedo recomendarte ningun servicio";
+					respuesta += "\nNo puedo recomendarte ningun servicio";
 				} else {
-					respuesta = "Recomendacion: \n" + recomendacion;
+					respuesta = "\nRecomendacion: \n" + recomendacion;
 				}
 				
 				
-				//vuelvo a arrancar con una preg de que necesitas
-				//DateFormat dateFormat = new SimpleDateFormat("HH:mm");
-				//Date date = new Date();
-				//respuesta+="- - - - - - - - - - - - - - - - - - - - -" + "\n";
-				//respuesta+=dateFormat.format(date)+ " Asistente:           " + "Hola!, ¿Que necesitas?" + "\n";
-				
+				respuesta += "\n \n Puedo ayudarte con algo mas? \n Puedo ayudar con: PASAJES - HOTELES - PAQUETES TURISTICOS";
 				//vuelvo a inicializar todas las variables una vez que se ejecuta la recomendacion
-				//filtradoServicios.inicializar();
-				//this.inicializarVariables();
+				filtradoServicios.inicializar();
+				this.inicializarVariables();
 			}
 			
 			return respuesta;
@@ -222,7 +220,7 @@ public class FiltradoReglas {
 				if (!encontrado) {
 					noRepetidas.add(a);
 				}
-				encontrado = true;
+				encontrado = false;
 			}
 			return noRepetidas; //devuelvo el conjunto de reglas no repetidas
 		} else {

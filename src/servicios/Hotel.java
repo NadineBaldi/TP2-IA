@@ -115,19 +115,19 @@ public class Hotel {
 	public String toString(boolean mostrarDoc) {
 		String aux = 
 				"Hotel " + this.nombre + " en " + this.destino + 
-				". Precio: $" + this.precio + ". Fecha check-in: " + this.fechaCheckIn + 
-				" - Fecha check-out: " + this.fechaCheckOut + ". ";
+				". \n Precio: $" + this.precio + ". \n Fecha check-in: " + this.fechaCheckIn + 
+				" - Fecha check-out: " + this.fechaCheckOut + ". \n";
 		
 		if (this.incluyeDesayuno) {
-			aux += "El hotel cuenta con desayuno incluido. ";
+			aux += "El hotel cuenta con desayuno incluido. \n";
 		}
 		
 		if (this.tienePileta) {
-			aux += "El hotel tiene pileta. ";
+			aux += "El hotel tiene pileta. \n";
 		}
 		
 		if (this.aceptaMascotas) {
-			aux += "El hotel acepta mascotas. ";
+			aux += "El hotel acepta mascotas. \n";
 		}
 		
 		if (mostrarDoc) {

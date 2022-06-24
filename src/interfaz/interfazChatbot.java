@@ -137,10 +137,10 @@ public class interfazChatbot extends JFrame {
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					setMensaje(textField.getText(), false);
-					textField.setText("");
 					textField.requestFocus();
 					String nuevoMensajeBot = filtradoReglas.nuevoCicloDeRespuesta(textField.getText());
 					setMensaje(nuevoMensajeBot, true);
+					textField.setText("");
 				}
 			}
 		});
@@ -148,10 +148,10 @@ public class interfazChatbot extends JFrame {
 		btnEnviarMensaje.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setMensaje(textField.getText(), false);
-				textField.setText("");
 				textField.requestFocus();
 				String nuevoMensajeBot = filtradoReglas.nuevoCicloDeRespuesta(textField.getText());
 				setMensaje(nuevoMensajeBot, true);
+				textField.setText("");
 			}
 		});
 		btnEnviarMensaje.setBackground(SystemColor.text);

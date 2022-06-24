@@ -194,11 +194,11 @@ public class EscribirTxt {
 				tipoPregHechas = contador + "- TipoPreguntaRespondida[ ";
 				for (TipoFiltroPregunta fp: ((ReglaPregunta) r).getCondicion()) { //recorro todas las palabras de la izquierda (toda la condicion de la regla)
 					//separo los tipos de preguntas de los filtros (pasaje, hotel, paquete e internacional son filtros que uso en las reglas de preguntas pero no son tipos de preguntas)
-					if (!
+					if (! (
 						(fp == TipoFiltroPregunta.PASAJE) ||
 						(fp == TipoFiltroPregunta.HOTEL) ||
 						(fp == TipoFiltroPregunta.PAQUETETURISTICO) ||
-						(fp == TipoFiltroPregunta.INTERNACIONAL)
+						(fp == TipoFiltroPregunta.INTERNACIONAL))
 					) {
 						tipoPregHechas+= fp + ", "; 
 					} else if (fp == TipoFiltroPregunta.INTERNACIONAL) {

@@ -1,0 +1,367 @@
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [hola, estoy, buscar, un, hotel]
+Tipo de pregunta actual realizada por el bot: TIPOSERVICIO
+Tipos de preguntas que ya fueron realizadas: []
+
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [buscar, hotel] ^ TipoPreguntaActual[TIPOSERVICIO] -> 'Ok, puedo ayudarte con tu busqueda de hoteles!' ^ TipoPreguntaRespondida[TIPOSERVICIO] ^ RespuestaUsuario[HOTEL] 
+2- [buscar, hotel] ^ TipoPreguntaActual[TIPOSERVICIO] -> 'Perfecto! Puedo ofrecerte hoteles' ^ TipoPreguntaRespondida[TIPOSERVICIO] ^ RespuestaUsuario[HOTEL] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 13 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Ok, puedo ayudarte con tu busqueda de hoteles!
+Se infiere: TipoPreguntaRespondida[TIPOSERVICIO] ^ RespuestaUsuario[HOTEL] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [hola, estoy, buscar, un, hotel]
+Tipo de pregunta actual realizada por el bot: TIPOSERVICIO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO]
+Respuesta/eleccion del usuario: [HOTEL] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, ] ^ FiltrosUsados[HOTEL] -> ¿Deseas viajar al interior o exterior del pais? ^ TipoPreguntaActual[DESTINO]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, ] ^ FiltrosUsados[HOTEL] -> ¿Deseas realizar un viaje nacional o internacional? ^ TipoPreguntaActual[DESTINO]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 17 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Deseas viajar al interior o exterior del pais?
+Se infiere: TipoPreguntaActual[DESTINO]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [deseo, viajar, al, exterior]
+Tipo de pregunta actual realizada por el bot: DESTINO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL]
+Respuesta/eleccion del usuario: HOTEL. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [exterior] ^ TipoPreguntaActual[DESTINO] -> 'Tengo algunos fuera del pais para recomendarte' ^ TipoPreguntaRespondida[DESTINO] ^ RespuestaUsuario[INTERNACIONAL] 
+2- [exterior] ^ TipoPreguntaActual[DESTINO] -> 'Te puedo recomendar algunos fuera del pais' ^ TipoPreguntaRespondida[DESTINO] ^ RespuestaUsuario[INTERNACIONAL] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 27 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Tengo algunos fuera del pais para recomendarte
+Se infiere: TipoPreguntaRespondida[DESTINO] ^ RespuestaUsuario[INTERNACIONAL] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [deseo, viajar, al, exterior]
+Tipo de pregunta actual realizada por el bot: DESTINO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, ] ^ FiltrosUsados[HOTEL] -> ¿Cuanto deseas gastar? ^ TipoPreguntaActual[PRESUPUESTO]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, ] ^ FiltrosUsados[HOTEL] -> ¿Cual es tu presupuesto? ^ TipoPreguntaActual[PRESUPUESTO]
+3- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, ] ^ FiltrosUsados[HOTEL - INTERNACIONAL] -> ¿A que continente deseas viajar?  
+ AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -
+ EUROPA - AFRICA - OCEANIA - ASIA ^ TipoPreguntaActual[CONTINENTE]
+4- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, ] ^ FiltrosUsados[HOTEL - INTERNACIONAL - INTERNACIONAL] -> ¿Que continente deseas visitar?  
+ AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -
+ EUROPA - AFRICA - OCEANIA - ASIA ^ TipoPreguntaActual[CONTINENTE]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 44 utilizando: Especificidad  Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Que continente deseas visitar?  
+ AMERICA DEL SUR - AMERICA DEL NORTE - CENTROAMERICA -
+ EUROPA - AFRICA - OCEANIA - ASIA
+Se infiere: TipoPreguntaActual[CONTINENTE]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [america, del, norte]
+Tipo de pregunta actual realizada por el bot: CONTINENTE
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [america, norte] ^ TipoPreguntaActual[CONTINENTE] -> 'Excelente elección! Tengo algunos que pueden interesarte' ^ TipoPreguntaRespondida[CONTINENTE] ^ RespuestaUsuario[AMERICANORTE] 
+2- [america, norte] ^ TipoPreguntaActual[CONTINENTE] -> 'Perfecto! Tengo algunos para recomendarte' ^ TipoPreguntaRespondida[CONTINENTE] ^ RespuestaUsuario[AMERICANORTE] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 97 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Excelente elección! Tengo algunos que pueden interesarte
+Se infiere: TipoPreguntaRespondida[CONTINENTE] ^ RespuestaUsuario[AMERICANORTE] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [america, del, norte]
+Tipo de pregunta actual realizada por el bot: CONTINENTE
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL, CONTINENTE]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] Respuesta/eleccion del usuario: [AMERICANORTE] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, ] ^ FiltrosUsados[HOTEL] -> ¿Cuanto deseas gastar? ^ TipoPreguntaActual[PRESUPUESTO]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, ] ^ FiltrosUsados[HOTEL] -> ¿Cual es tu presupuesto? ^ TipoPreguntaActual[PRESUPUESTO]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 20 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Cual es tu presupuesto?
+Se infiere: TipoPreguntaActual[PRESUPUESTO]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [tengo, un, presupuesto, alto]
+Tipo de pregunta actual realizada por el bot: PRESUPUESTO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL, CONTINENTE]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. Respuesta/eleccion del usuario: AMERICANORTE. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [presupuesto, alto] ^ TipoPreguntaActual[PRESUPUESTO] -> 'Ok, tengo algunos de lujo que podrian interesarte' ^ TipoPreguntaRespondida[PRESUPUESTO] ^ RespuestaUsuario[GASTARMUCHO] 
+2- [presupuesto, alto] ^ TipoPreguntaActual[PRESUPUESTO] -> 'Ok, tengo algunos costosos que podrian interesarte' ^ TipoPreguntaRespondida[PRESUPUESTO] ^ RespuestaUsuario[GASTARMUCHO] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 49 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Ok, tengo algunos de lujo que podrian interesarte
+Se infiere: TipoPreguntaRespondida[PRESUPUESTO] ^ RespuestaUsuario[GASTARMUCHO] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [tengo, un, presupuesto, alto]
+Tipo de pregunta actual realizada por el bot: PRESUPUESTO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] Respuesta/eleccion del usuario: [AMERICANORTE] Respuesta/eleccion del usuario: [GASTARMUCHO] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Buscas hotel para una sola persona o mas? ^ TipoPreguntaActual[CANTPERSONAS]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te interesa una habitacion para una persona o varias? ^ TipoPreguntaActual[CANTPERSONAS]
+3- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Tienes alguna preferencia en especial? ¿Con pileta o sin pileta? ^ TipoPreguntaActual[PREFERENCIAPILETA]
+4- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel con pileta o sin? ^ TipoPreguntaActual[PREFERENCIAPILETA]
+5- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Queres el hotel con o sin desayuno? ^ TipoPreguntaActual[PREFERENCIADESAYUNO]
+6- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel con desayuno o sin? ^ TipoPreguntaActual[PREFERENCIADESAYUNO]
+7- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Alguna preferencia en especial con las mascotas? 
+ ¿Que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+8- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 21 utilizando: Prioridad  Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Buscas hotel para una sola persona o mas?
+Se infiere: TipoPreguntaActual[CANTPERSONAS]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [para, varia, persona]
+Tipo de pregunta actual realizada por el bot: CANTPERSONAS
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. Respuesta/eleccion del usuario: AMERICANORTE. Respuesta/eleccion del usuario: GASTARMUCHO. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [varia, persona] ^ TipoPreguntaActual[CANTPERSONAS] -> 'Perfecto. Tengo algunos para recomendarles' ^ TipoPreguntaRespondida[CANTPERSONAS] ^ RespuestaUsuario[VARIASPERSONAS] 
+2- [varia, persona] ^ TipoPreguntaActual[CANTPERSONAS] -> 'Excelente eleccion. Tengo algunos para recomendarles' ^ TipoPreguntaRespondida[CANTPERSONAS] ^ RespuestaUsuario[VARIASPERSONAS] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 57 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Perfecto. Tengo algunos para recomendarles
+Se infiere: TipoPreguntaRespondida[CANTPERSONAS] ^ RespuestaUsuario[VARIASPERSONAS] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [para, varia, persona]
+Tipo de pregunta actual realizada por el bot: CANTPERSONAS
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] Respuesta/eleccion del usuario: [AMERICANORTE] Respuesta/eleccion del usuario: [GASTARMUCHO] Respuesta/eleccion del usuario: [VARIASPERSONAS] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Tienes alguna preferencia en especial? ¿Con pileta o sin pileta? ^ TipoPreguntaActual[PREFERENCIAPILETA]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel con pileta o sin? ^ TipoPreguntaActual[PREFERENCIAPILETA]
+3- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Queres el hotel con o sin desayuno? ^ TipoPreguntaActual[PREFERENCIADESAYUNO]
+4- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel con desayuno o sin? ^ TipoPreguntaActual[PREFERENCIADESAYUNO]
+5- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Alguna preferencia en especial con las mascotas? 
+ ¿Que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+6- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 23 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Tienes alguna preferencia en especial? ¿Con pileta o sin pileta?
+Se infiere: TipoPreguntaActual[PREFERENCIAPILETA]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [sin, pileta]
+Tipo de pregunta actual realizada por el bot: PREFERENCIAPILETA
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. Respuesta/eleccion del usuario: AMERICANORTE. Respuesta/eleccion del usuario: GASTARMUCHO. Respuesta/eleccion del usuario: VARIASPERSONAS. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [sin, pileta] ^ TipoPreguntaActual[PREFERENCIAPILETA] -> 'Ok, tengo algunos hoteles sin pileta que podrian interesarte' ^ TipoPreguntaRespondida[PREFERENCIAPILETA] ^ RespuestaUsuario[SINPILETA] 
+2- [sin, pileta] ^ TipoPreguntaActual[PREFERENCIAPILETA] -> 'Buenisimo! Tengo algunos hoteles sin pileta para recomendarte' ^ TipoPreguntaRespondida[PREFERENCIAPILETA] ^ RespuestaUsuario[SINPILETA] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 73 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Ok, tengo algunos hoteles sin pileta que podrian interesarte
+Se infiere: TipoPreguntaRespondida[PREFERENCIAPILETA] ^ RespuestaUsuario[SINPILETA] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [sin, pileta]
+Tipo de pregunta actual realizada por el bot: PREFERENCIAPILETA
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] Respuesta/eleccion del usuario: [AMERICANORTE] Respuesta/eleccion del usuario: [GASTARMUCHO] Respuesta/eleccion del usuario: [VARIASPERSONAS] Respuesta/eleccion del usuario: [SINPILETA] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Queres el hotel con o sin desayuno? ^ TipoPreguntaActual[PREFERENCIADESAYUNO]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel con desayuno o sin? ^ TipoPreguntaActual[PREFERENCIADESAYUNO]
+3- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Alguna preferencia en especial con las mascotas? 
+ ¿Que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+4- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 26 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Te gustaria un hotel con desayuno o sin?
+Se infiere: TipoPreguntaActual[PREFERENCIADESAYUNO]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [con, desayuno, incluido]
+Tipo de pregunta actual realizada por el bot: PREFERENCIADESAYUNO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. Respuesta/eleccion del usuario: AMERICANORTE. Respuesta/eleccion del usuario: GASTARMUCHO. Respuesta/eleccion del usuario: VARIASPERSONAS. Respuesta/eleccion del usuario: SINPILETA. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [con, desayuno] ^ TipoPreguntaActual[PREFERENCIADESAYUNO] -> 'Entiendo' ^ TipoPreguntaRespondida[PREFERENCIADESAYUNO] ^ RespuestaUsuario[CONDESAYUNO] 
+2- [con, desayuno] ^ TipoPreguntaActual[PREFERENCIADESAYUNO] -> 'Ok, entiendo' ^ TipoPreguntaRespondida[PREFERENCIADESAYUNO] ^ RespuestaUsuario[CONDESAYUNO] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 75 utilizando: Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Entiendo
+Se infiere: TipoPreguntaRespondida[PREFERENCIADESAYUNO] ^ RespuestaUsuario[CONDESAYUNO] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [con, desayuno, incluido]
+Tipo de pregunta actual realizada por el bot: PREFERENCIADESAYUNO
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA, PREFERENCIADESAYUNO]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] Respuesta/eleccion del usuario: [AMERICANORTE] Respuesta/eleccion del usuario: [GASTARMUCHO] Respuesta/eleccion del usuario: [VARIASPERSONAS] Respuesta/eleccion del usuario: [SINPILETA] Respuesta/eleccion del usuario: [CONDESAYUNO] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Alguna preferencia en especial con las mascotas? 
+ ¿Que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, PRESUPUESTO, ] ^ FiltrosUsados[HOTEL] -> ¿Te gustaria un hotel que acepte o no acepte mascotas? ^ TipoPreguntaActual[PREFERENCIAMASCOTAS]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 27 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Alguna preferencia en especial con las mascotas? 
+ ¿Que acepte o no acepte mascotas?
+Se infiere: TipoPreguntaActual[PREFERENCIAMASCOTAS]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [que, no, aceptar, mascota]
+Tipo de pregunta actual realizada por el bot: PREFERENCIAMASCOTAS
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA, PREFERENCIADESAYUNO]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. Respuesta/eleccion del usuario: AMERICANORTE. Respuesta/eleccion del usuario: GASTARMUCHO. Respuesta/eleccion del usuario: VARIASPERSONAS. Respuesta/eleccion del usuario: SINPILETA. Respuesta/eleccion del usuario: CONDESAYUNO. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [aceptar, mascota] ^ TipoPreguntaActual[PREFERENCIAMASCOTAS] -> 'Perfecto! Tengo unos hoteles pet friendly que podrian interesarte' ^ TipoPreguntaRespondida[PREFERENCIAMASCOTAS] ^ RespuestaUsuario[ACEPTARMASCOTAS] 
+2- [aceptar, mascota] ^ TipoPreguntaActual[PREFERENCIAMASCOTAS] -> 'Excelente eleccion! Puedo recomendarte algunos hoteles pet friendly' ^ TipoPreguntaRespondida[PREFERENCIAMASCOTAS] ^ RespuestaUsuario[ACEPTARMASCOTAS] 
+3- [no, aceptar, mascota] ^ TipoPreguntaActual[PREFERENCIAMASCOTAS] -> 'Perfecto! Tengo unos hoteles que no aceptan mascotas 
+ que podrian interesarte' ^ TipoPreguntaRespondida[PREFERENCIAMASCOTAS] ^ RespuestaUsuario[NOACEPTARMASCOTAS] 
+4- [no, aceptar, mascota] ^ TipoPreguntaActual[PREFERENCIAMASCOTAS] -> 'Excelente eleccion! Puedo recomendarte algunos hoteles que no aceptan mascotas' ^ TipoPreguntaRespondida[PREFERENCIAMASCOTAS] ^ RespuestaUsuario[NOACEPTARMASCOTAS] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 81 utilizando: Especificidad  Prioridad 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Perfecto! Tengo unos hoteles que no aceptan mascotas 
+ que podrian interesarte
+Se infiere: TipoPreguntaRespondida[PREFERENCIAMASCOTAS] ^ RespuestaUsuario[NOACEPTARMASCOTAS] 
+
+ -- LUEGO SE BUSCA UNA PREGUNTA PARA PREGUNTARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [que, no, aceptar, mascota]
+Tipo de pregunta actual realizada por el bot: PREFERENCIAMASCOTAS
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA, PREFERENCIADESAYUNO, PREFERENCIAMASCOTAS]
+Respuesta/eleccion del usuario: [HOTEL] Respuesta/eleccion del usuario: [INTERNACIONAL] Respuesta/eleccion del usuario: [AMERICANORTE] Respuesta/eleccion del usuario: [GASTARMUCHO] Respuesta/eleccion del usuario: [VARIASPERSONAS] Respuesta/eleccion del usuario: [SINPILETA] Respuesta/eleccion del usuario: [CONDESAYUNO] Respuesta/eleccion del usuario: [NOACEPTARMASCOTAS] 
+ 
+POSIBLES REGLAS DE PREGUNTAS A EJECUTARSE:
+1- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA, PREFERENCIADESAYUNO, PREFERENCIAMASCOTAS, ] ^ FiltrosUsados[HOTEL] -> ¿Necesitas asistencia con los documentos requeridos para el viaje? ^ TipoPreguntaActual[AYUDADOCS]
+2- TipoPreguntaRespondida[ TIPOSERVICIO, DESTINO, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA, PREFERENCIADESAYUNO, PREFERENCIAMASCOTAS, ] ^ FiltrosUsados[HOTEL] -> ¿Necesitas ayuda para saber que documentos son necesarios para el viaje? ^ TipoPreguntaActual[AYUDADOCS]
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 50 utilizando: Aleatorio 
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: ¿Necesitas ayuda para saber que documentos son necesarios para el viaje?
+Se infiere: TipoPreguntaActual[AYUDADOCS]
+ 
+ 
+ 
+ -- PRIMERO SE BUSCA UNA RESPUESTA PARA DARLE AL USUARIO -- 
+ 
+BASE DE CONOCIMIENTO:
+Palabras ingresadas por el usuario: [si]
+Tipo de pregunta actual realizada por el bot: AYUDADOCS
+Tipos de preguntas que ya fueron realizadas: [TIPOSERVICIO, HOTEL, DESTINO, INTERNACIONAL, CONTINENTE, PRESUPUESTO, CANTPERSONAS, PREFERENCIAPILETA, PREFERENCIADESAYUNO, PREFERENCIAMASCOTAS]
+Respuesta/eleccion del usuario: HOTEL. Respuesta/eleccion del usuario: INTERNACIONAL. Respuesta/eleccion del usuario: AMERICANORTE. Respuesta/eleccion del usuario: GASTARMUCHO. Respuesta/eleccion del usuario: VARIASPERSONAS. Respuesta/eleccion del usuario: SINPILETA. Respuesta/eleccion del usuario: CONDESAYUNO. Respuesta/eleccion del usuario: NOACEPTARMASCOTAS. 
+ 
+POSIBLES REGLAS DE RESPUESTAS A EJECUTARSE:
+1- [si] ^ TipoPreguntaActual[AYUDADOCS] -> 'Dale! Puedo ayudarte con eso' ^ TipoPreguntaRespondida[AYUDADOCS] ^ RespuestaUsuario[NECESITARAYUDA] 
+ 
+SELECCION DE REGLA: 
+Se ejecuta la regla: 123 utilizando:
+ 
+RESULTADOS DE EJECUTAR LA REGLA: 
+Se muestra por pantalla: Dale! Puedo ayudarte con eso
+Se infiere: TipoPreguntaRespondida[AYUDADOCS] ^ RespuestaUsuario[NECESITARAYUDA] 
+
